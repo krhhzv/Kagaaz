@@ -19,60 +19,37 @@
   --border:rgba(0,0,0,0.06);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter,system-ui;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui;}
 
-body{
-  background:var(--bg);
-  color:var(--text);
-}
+body{background:var(--bg);color:var(--text);}
 
 /* ===== PAGE ===== */
 .page{display:none;height:100vh;}
 .page.active{display:flex;flex-direction:column;}
 
 /* ===== HEADER ===== */
-.header{
-  padding:22px 18px 0;
-}
-
-.logo{
-  font-size:22px;
-  font-weight:600;
-}
-
-.tag{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:4px;
-}
+.header{padding:22px 18px 0;}
+.logo{font-size:22px;font-weight:600;}
+.tag{font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.08em;}
 
 /* ===== HOME ===== */
-.home{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
+.home{flex:1;display:flex;flex-direction:column;justify-content:space-between;}
 
 .hero{
   flex:1;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:28px;
+  gap:26px;
   padding:0 22px;
 }
 
-/* TEXT */
+.text-group{max-width:420px;}
+
 .text-group h1{
-  font-size:32px;
+  font-size:26px;
   font-weight:500;
-  line-height:1.2;
+  line-height:1.3;
 }
 
 .text-group p{
@@ -81,14 +58,12 @@ body{
   margin-top:8px;
 }
 
-/* CONTEXT */
 .context{
   font-size:12px;
   color:var(--muted);
-  line-height:1.5;
+  line-height:1.6;
 }
 
-/* CTA */
 .cta{
   width:100%;
   max-width:260px;
@@ -97,21 +72,13 @@ body{
   border:1px solid var(--accent);
   background:transparent;
   cursor:pointer;
-  transition:.2s;
 }
 
-.cta:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(139,115,85,.15);
-}
-
-/* TRUST */
 .trust{
   font-size:11px;
   color:var(--muted);
 }
 
-/* FOOTER */
 .footer{
   display:flex;
   justify-content:space-between;
@@ -121,10 +88,7 @@ body{
 }
 
 /* ===== TOOL ===== */
-.app{
-  display:flex;
-  flex-direction:column;
-}
+.app{display:flex;flex-direction:column;}
 
 .left{
   padding:20px;
@@ -140,21 +104,12 @@ input,select{
   font-size:13px;
 }
 
-input:focus{
-  outline:none;
-  border-color:rgba(0,0,0,0.2);
-}
-
 .btn{
   padding:12px;
   border:1px solid var(--accent);
   background:transparent;
   cursor:pointer;
-  transition:.2s;
 }
-
-.btn:hover{transform:scale(1.03);}
-.btn:active{transform:scale(0.96);}
 
 .right{
   padding:30px;
@@ -170,17 +125,13 @@ input:focus{
   margin:auto;
 }
 
-/* HEADER */
 .inv-header{
   display:flex;
   justify-content:space-between;
   margin-bottom:32px;
 }
 
-.inv-title{
-  font-size:22px;
-  font-weight:600;
-}
+.inv-title{font-size:22px;font-weight:600;}
 
 .meta{
   font-size:12px;
@@ -188,7 +139,6 @@ input:focus{
   text-align:right;
 }
 
-/* PARTIES */
 .parties{
   display:flex;
   justify-content:space-between;
@@ -198,7 +148,6 @@ input:focus{
 .small{font-size:11px;color:var(--muted);}
 .bold{font-size:14px;font-weight:500;}
 
-/* TABLE */
 .table-head,.table-row{
   display:grid;
   grid-template-columns:2fr 3fr 2fr 1fr;
@@ -207,7 +156,6 @@ input:focus{
   font-size:13px;
 }
 
-/* TOTAL */
 .total{
   margin-top:30px;
   width:260px;
@@ -220,10 +168,7 @@ input:focus{
   margin-bottom:6px;
 }
 
-.final{
-  font-weight:600;
-  font-size:16px;
-}
+.final{font-weight:600;}
 
 /* ACTIONS */
 .actions{
@@ -232,43 +177,30 @@ input:focus{
   margin-top:20px;
 }
 
-.action-btn{
-  flex:1;
+.action-btn{flex:1;}
+
+/* SAVED */
+#savedList{display:flex;flex-direction:column;gap:6px;}
+
+.saved-item{
+  padding:10px;
+  border:1px solid var(--border);
+  font-size:12px;
+  cursor:pointer;
 }
 
-/* ===== DESKTOP ===== */
+.saved-item:hover{background:#f0ece6;}
+
+/* DESKTOP */
 @media(min-width:900px){
+  .hero{padding:0 80px;align-items:flex-start;}
+  .text-group h1{font-size:36px;}
 
-  .hero{
-    align-items:flex-start;
-    padding:0 80px;
-    gap:36px;
-  }
+  .app{flex-direction:row;height:100vh;}
+  .left{width:320px;border-right:1px solid var(--border);}
+  .right{flex:1;}
 
-  .text-group h1{
-    font-size:44px;
-  }
-
-  .cta{width:280px;}
-
-  .app{
-    flex-direction:row;
-    height:100vh;
-  }
-
-  .left{
-    width:320px;
-    border-right:1px solid var(--border);
-  }
-
-  .right{
-    flex:1;
-  }
-
-  .actions{
-    max-width:820px;
-    margin:20px auto 0;
-  }
+  .actions{max-width:820px;margin:20px auto 0;}
 }
 
 </style>
@@ -288,7 +220,7 @@ input:focus{
 <div class="hero">
 
 <div class="text-group">
-<h1>invoices shouldn’t take effort.</h1>
+<h1>clean invoices. no effort.</h1>
 <p>generate clean invoices instantly. no setup. no friction.</p>
 </div>
 
@@ -318,6 +250,7 @@ no login · no tracking · works offline
 <div class="app">
 
 <div class="left">
+
 <button class="btn" onclick="goHome()">← back</button>
 
 <input id="from" placeholder="from">
@@ -337,6 +270,15 @@ no login · no tracking · works offline
 
 <input id="gst" type="number" placeholder="GST %">
 <input id="adv" type="number" placeholder="advance %">
+
+<button class="btn" onclick="saveInvoice()">save invoice</button>
+
+<div style="margin-top:10px;font-size:12px;color:var(--muted)">
+saved invoices
+</div>
+
+<div id="savedList"></div>
+
 </div>
 
 <div class="right">
@@ -375,6 +317,7 @@ no login · no tracking · works offline
 <div><span>subtotal</span><span id="sub"></span></div>
 <div><span>gst</span><span id="gstOut"></span></div>
 <div><span>advance</span><span id="advOut"></span></div>
+<div><span>due</span><span id="due"></span></div>
 <div class="final"><span>total</span><span id="total"></span></div>
 </div>
 
@@ -393,15 +336,8 @@ no login · no tracking · works offline
 <script>
 
 /* NAV */
-function goTool(){
-  home.classList.remove("active");
-  tool.classList.add("active");
-}
-
-function goHome(){
-  tool.classList.remove("active");
-  home.classList.add("active");
-}
+function goTool(){ home.classList.remove("active"); tool.classList.add("active"); }
+function goHome(){ tool.classList.remove("active"); home.classList.add("active"); }
 
 /* AUTO */
 invNo.value="KGZ-"+Math.floor(1000+Math.random()*9000);
@@ -435,25 +371,30 @@ function update(){
   let html="";
 
   items.forEach(i=>{
-    subtotal+=Number(i.price||0);
+    let price=Number(i.price||0);
+    subtotal+=price;
+
     html+=`
     <div class="table-row">
       <div>${i.name||"-"}</div>
       <div>${i.desc||"-"}</div>
       <div>${i.link?`<a href="${i.link}" target="_blank">view</a>`:"-"}</div>
-      <div>${cur}${i.price||0}</div>
+      <div>${cur}${price}</div>
     </div>`;
   });
 
-  let gst=subtotal*(gst.value||0)/100;
-  let adv=subtotal*(adv.value||0)/100;
-  let total=subtotal+gst;
+  let gstVal=subtotal*(gst.value||0)/100;
+  let totalVal=subtotal+gstVal;
+  let advVal=subtotal*(adv.value||0)/100;
+  let dueVal=totalVal-advVal;
 
   table.innerHTML=html;
-  sub.innerText=cur+subtotal;
-  gstOut.innerText=cur+gst.toFixed(2);
-  advOut.innerText=cur+adv.toFixed(2);
-  total.innerText=cur+total.toFixed(2);
+
+  sub.innerText=cur+subtotal.toFixed(2);
+  gstOut.innerText=cur+gstVal.toFixed(2);
+  advOut.innerText=cur+advVal.toFixed(2);
+  total.innerText=cur+totalVal.toFixed(2);
+  due.innerText=cur+dueVal.toFixed(2);
 
   fromP.innerText=from.value||"-";
   toP.innerText=to.value||"-";
@@ -462,30 +403,109 @@ function update(){
   datePreview.innerText=new Date(date.value).toLocaleDateString("en-IN");
 }
 
-/* DOWNLOAD */
+/* EXPORT */
+function ensureUpdated(cb){
+  update();
+  setTimeout(cb,200);
+}
+
 function downloadPNG(){
-  html2canvas(invoice,{scale:2}).then(c=>{
-    let a=document.createElement("a");
-    a.href=c.toDataURL();
-    a.download="invoice.png";
-    a.click();
+  ensureUpdated(()=>{
+    html2canvas(invoice,{scale:2}).then(c=>{
+      let a=document.createElement("a");
+      a.href=c.toDataURL();
+      a.download="invoice.png";
+      a.click();
+    });
   });
 }
 
 function downloadPDF(){
-  html2canvas(invoice,{scale:2}).then(c=>{
-    const pdf=new jspdf.jsPDF("p","mm","a4");
-    const w=210;
-    const h=(c.height*w)/c.width;
-    pdf.addImage(c.toDataURL(),"PNG",0,0,w,h);
-    pdf.save("invoice.pdf");
+  ensureUpdated(()=>{
+    const {jsPDF}=window.jspdf;
+    html2canvas(invoice,{scale:2}).then(c=>{
+      const pdf=new jsPDF("p","mm","a4");
+      const w=210;
+      const h=(c.height*w)/c.width;
+      pdf.addImage(c.toDataURL(),"PNG",0,0,w,h);
+      pdf.save("invoice.pdf");
+    });
   });
+}
+
+/* STORAGE */
+function getData(){
+  return JSON.parse(localStorage.getItem("kagaaz")||"[]");
+}
+
+function setData(data){
+  localStorage.setItem("kagaaz",JSON.stringify(data));
+}
+
+function saveInvoice(){
+  let data=getData();
+
+  data.push({
+    id:Date.now(),
+    from:from.value,
+    to:to.value,
+    invNo:invNo.value,
+    date:date.value,
+    currency:currency.value,
+    gst:gst.value,
+    adv:adv.value,
+    items:items
+  });
+
+  setData(data);
+  renderSaved();
+}
+
+function loadInvoice(id){
+  let inv=getData().find(i=>i.id===id);
+  if(!inv) return;
+
+  from.value=inv.from;
+  to.value=inv.to;
+  invNo.value=inv.invNo;
+  date.value=inv.date;
+  currency.value=inv.currency;
+  gst.value=inv.gst;
+  adv.value=inv.adv;
+  items=inv.items||[];
+
+  renderInputs();
+  update();
+}
+
+function deleteInvoice(id){
+  let data=getData().filter(i=>i.id!==id);
+  setData(data);
+  renderSaved();
+}
+
+function renderSaved(){
+  savedList.innerHTML=getData().map(i=>`
+    <div class="saved-item">
+      <div onclick="loadInvoice(${i.id})">
+        ${i.invNo} • ${i.to}
+      </div>
+      <div style="color:red;font-size:10px"
+        onclick="deleteInvoice(${i.id})">
+        delete
+      </div>
+    </div>
+  `).join("");
 }
 
 /* INIT */
 const itemsDiv=document.getElementById("items");
+const savedList=document.getElementById("savedList");
+
 document.addEventListener("input",update);
 addItem();
+update();
+renderSaved();
 
 </script>
 
